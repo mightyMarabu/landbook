@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    <!--    <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="static/css/resources/ol.css">
+        <link rel="stylesheet" href="static/css/resources/ol3-layerswitcher.css">
+        <style>
+        html, body {
+            background-color: #ffffff;
+        }
+        </style>
+        <style>
+        #map {
+            width: 100%; 
+            height: 16cm;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <h2>another OpenLayers Playground..</h2>
+        <p>powered by Flask</p>
+        
+        <div id='Radius'>
+            <p>Radius: <select id="radius">
+                <option value="0.1">~11 km</option>
+                <option value="0.2">~22 km</option>
+                <option value="1">~111 km</option>
+            </select></p>
+        </div>
+        <DIV id="customControl" onload="initWFSTransactions()">
+                <input type="button" id="customControlSave" value="save" onclick="updateFeature()"/>
+            </DIV>
+<br>
+        <div id="map">
+            <div id="popup" class="ol-popup">
+                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                <div id="popup-content"></div>
+            </div>
+        </div>
+        
+
+        <h3>End of page</h3>
+
+        <script src="static/js/resources/expressions.js"></script>
+        <script src="static/js/resources/polyfills.js"></script>
+        <script src="static/js/resources/functions.js"></script>
+        <script src="static/js/resources/ol-debug.js"></script>
+        <script src="static/js/resources/ol3-layerswitcher.js"></script>
+        
+        <script src="static/js/layers/layers.js" type="text/javascript"></script> 
+        <script src="static/js/resources/core.js"></script>
+        <script src="static/js/resources/Autolinker.min.js"></script>
+        <script src="static/js/resources/jquery.min.js"></script>
+
+        <script>
+        // get Radius
+        var getRadius = function(){
+            return parseFloat($("#radius").val());
+        }
+        console.log(getRadius)
+        </script>
+
+
+    </body>
+</html>
