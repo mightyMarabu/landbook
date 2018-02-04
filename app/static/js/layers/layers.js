@@ -25,7 +25,7 @@ var lyrProtectedAreas = new ol.layer.Tile({
                             
                             
                           });
-              wms_layers.push([lyrCommunes, 0]);
+              wms_layers.push([lyrProtectedAreas, 0]);
 
 var lyrArea_result_1 = new ol.layer.Tile({
                             source: new ol.source.TileWMS(({
