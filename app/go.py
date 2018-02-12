@@ -19,17 +19,19 @@ def savePoint(lat, lng, radius):
     sub = insert_into_db("landbook.insert_data", (lat,lng,radius))
     return jsonify("data submitted!")
 
+#@app.route("/reset/")
+#def reset():
+#    res = {"id":"99"}
+#    res = ["What am", "I doing?"]
+#    res = resetMap()
+#    return Response(json.dumps(res), mimetype = "application/json")   
+
 @app.route("/reset/")
 def reset():
-    res = {"id":"99"}
-    res = ["What am", "I doing?"]
+    res = {"id":"3"}
     res = resetMap()
-    return Response(json.dumps(res), mimetype = "application/json")   
-
-@app.route("/reset/<go>")
-def resetMap():
-    res = resetMap("landbook.reset_rawData()")
     return jsonify("map reseted!")
+#    return Response(json.dumps(res), mimetype = "application/json")
 
 if __name__ == "__main__":
     app.run(debug = True)

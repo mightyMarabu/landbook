@@ -46,7 +46,19 @@
                 <div id="popup-content"></div>
             </div>
         </div>
-        
+        <button onclick="reset_map()">reset map</button>
+        <script>
+        function reset_map() {
+            console.log("reset-button clicked");
+            $.getJSON({
+            url: `/reset/`,
+            success: data => {
+            console.log(data);
+            location.reload();
+            }
+            })   
+        };    
+        </script>
         <p>what are you looking at?</p>
         <h3>End of page</h3>
 
