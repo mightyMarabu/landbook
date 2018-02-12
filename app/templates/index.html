@@ -24,6 +24,8 @@
     <body>
         <h2>another OpenLayers Playground..</h2>
         <p>powered by Flask</p>
+        <br>
+        <p>check your soil-type!</p>
         
         <div id='Radius'>
             <p>Radius: <select id="radius">
@@ -32,9 +34,11 @@
                 <option value="1">~111 km</option>
             </select></p>
         </div>
+    <!--WFS-Tool-----------------------------------------------------------------------------------------    
         <DIV id="customControl" onload="initWFSTransactions()">
                 <input type="button" id="customControlSave" value="save" onclick="updateFeature()"/>
-            </DIV>
+        </DIV>
+    ---------------------------------------------------------------------------------------------------->
 <br>
         <div id="map">
             <div id="popup" class="ol-popup">
@@ -43,12 +47,12 @@
             </div>
         </div>
         
-
+        <p>what are you looking at?</p>
         <h3>End of page</h3>
 
         <script src="static/js/resources/expressions.js"></script>
         <script src="static/js/resources/polyfills.js"></script>
-        <script src="static/js/resources/functions.js"></script>
+       <!-- <script src="static/js/resources/functions.js"></script> -->
         <script src="static/js/resources/ol-debug.js"></script>
         <script src="static/js/resources/ol3-layerswitcher.js"></script>
         
@@ -62,7 +66,17 @@
         var getRadius = function(){
             return parseFloat($("#radius").val());
         }
-        console.log(getRadius)
+        console.log(getRadius())
+
+        //get Coords
+        map.on('pointermove', function(evt) {
+            if (evt.dragging){
+                return;
+            }
+        });
+
+        
+       
         </script>
 
 
