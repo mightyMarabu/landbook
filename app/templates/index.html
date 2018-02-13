@@ -13,7 +13,7 @@
             background-color: #ffffff;
         }
         .header{
-           background-color: rgb(1, 134, 90);
+           background-color: rgb(234, 195, 120);
            padding: 20px;
            text-align: right 
         }
@@ -21,16 +21,17 @@
             float: left;
             width: 90%;
             height: 20cm;
-            background-color: rgb(173, 173, 173);
+            background-color: rgb(226, 255, 121);
         }
         .rightcolumn{
             float:right;
+            text-align: right;
             width: 10%;
             height: 20cm;
-            background-color: rgb(173, 173, 173);
+            background-color: rgb(226, 255, 121);
         }
         .footer{
-            background-color:  rgb(1, 134, 90);
+            background-color:  rgb(234, 195, 120);
             text-align: right;
             padding: 10px;
         }
@@ -49,8 +50,7 @@
     </div>
     <div class ="leftcolumn">
         <p>powered by Flask</p>
-        <br>
-        <p>check your soil-type!</p>
+        <p>protected areas and soil-type within range</p>
         
        
     <!--WFS-Tool-----------------------------------------------------------------------------------------    
@@ -67,7 +67,9 @@
             </div>
         
         </div>
+        
         <div class="rightcolumn">
+                <br><br><br><br><br><br>
                 <div id='Radius'>
                         <p>Radius: <select id="radius">
                             <option value="0.1">~11 km</option>

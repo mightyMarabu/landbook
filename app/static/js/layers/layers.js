@@ -135,6 +135,6 @@ attributions: [new ol.Attribution({html: '<a href=""></a>'})],
   });
 */
 
-lyrSites.setVisible(true), lyrSoilKenya.setVisible(true);lyrProtectedAreas.setVisible(false);lyrArea_result_1.setVisible(true);//lyrSumArea_result_2.setVisible(false);lyrBuffer_result_3.setVisible(true);//vector.setVisible(true);
+lyrSites.setVisible(true),lyrSoilKenya.setVisible(false);lyrProtectedAreas.setVisible(false);lyrArea_result_1.setVisible(true);//lyrSumArea_result_2.setVisible(false);lyrBuffer_result_3.setVisible(true);//vector.setVisible(true);
 var layersList = [baseLayer,lyrSoilKenya,lyrProtectedAreas,lyrArea_result_1,lyrSites,];
 

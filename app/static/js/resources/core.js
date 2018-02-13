@@ -50,7 +50,7 @@ map.on("singleclick", (e) => {
     });
 });
 
-map.getView().fit([3200000, 200000, 4200000, 300000], map.getSize());
+map.getView().fit([2200000, 200000, 6200000, 800000], map.getSize());
 
 var NO_POPUP = 0
 var ALL_FIELDS = 1
