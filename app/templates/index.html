@@ -12,6 +12,28 @@
         html, body {
             background-color: #ffffff;
         }
+        .header{
+           background-color: rgb(1, 134, 90);
+           padding: 20px;
+           text-align: right 
+        }
+        .leftcolumn{
+            float: left;
+            width: 90%;
+            height: 20cm;
+            background-color: rgb(173, 173, 173);
+        }
+        .rightcolumn{
+            float:right;
+            width: 10%;
+            height: 20cm;
+            background-color: rgb(173, 173, 173);
+        }
+        .footer{
+            background-color:  rgb(1, 134, 90);
+            text-align: right;
+            padding: 10px;
+        }
         </style>
         <style>
         #map {
@@ -19,48 +41,58 @@
             height: 16cm;
         }
         </style>
-        <title></title>
+        <title>Landbook</title>
     </head>
     <body>
-        <h2>another OpenLayers Playground..</h2>
+    <div class="header">
+        <h2>Landbook</h2>
+    </div>
+    <div class ="leftcolumn">
         <p>powered by Flask</p>
         <br>
         <p>check your soil-type!</p>
         
-        <div id='Radius'>
-            <p>Radius: <select id="radius">
-                <option value="0.1">~11 km</option>
-                <option value="0.2">~22 km</option>
-                <option value="1">~111 km</option>
-            </select></p>
-        </div>
+       
     <!--WFS-Tool-----------------------------------------------------------------------------------------    
         <DIV id="customControl" onload="initWFSTransactions()">
                 <input type="button" id="customControlSave" value="save" onclick="updateFeature()"/>
         </DIV>
     ---------------------------------------------------------------------------------------------------->
 <br>
-        <div id="map">
-            <div id="popup" class="ol-popup">
-                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-                <div id="popup-content"></div>
+            <div id="map">
+                <div id="popup" class="ol-popup">
+                    <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                    <div id="popup-content"></div>
+                </div>
             </div>
+        
         </div>
-        <button onclick="reset_map()">reset map</button>
-        <script>
-        function reset_map() {
-            console.log("reset-button clicked");
-            $.getJSON({
-            url: `/reset/`,
-            success: data => {
-            console.log(data);
-            location.reload();
-            }
-            })   
-        };    
+        <div class="rightcolumn">
+                <div id='Radius'>
+                        <p>Radius: <select id="radius">
+                            <option value="0.1">~11 km</option>
+                            <option value="0.2">~22 km</option>
+                            <option value="1">~111 km</option>
+                        </select></p>
+                    </div>
+                    <button onclick="reset_map()">reset map</button>
+                    <script>
+                    function reset_map() {
+                        console.log("reset-button clicked");
+                        $.getJSON({
+                        url: `/reset/`,
+                        success: data => {
+                        console.log(data);
+                        location.reload();
+                        }
+                        })   
+                    };    
         </script>
-        <p>what are you looking at?</p>
-        <h3>End of page</h3>
+        </div>
+        <div class="footer">
+            <p>heads up!</p>
+        </div>
+        
 
         <script src="static/js/resources/expressions.js"></script>
         <script src="static/js/resources/polyfills.js"></script>
