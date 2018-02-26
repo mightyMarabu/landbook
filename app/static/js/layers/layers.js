@@ -77,6 +77,22 @@ var lyrArea_result_1 = new ol.layer.Tile({
                           });
               wms_layers.push([lyrArea_result_1, 0]);
 
+var lyrArea_result_2 = new ol.layer.Tile({
+                source: new ol.source.TileWMS(({
+                  url: "http://163.172.133.143:32780/geoserver/landbook/wms?",
+attributions: [new ol.Attribution({html: '<a href=""></a>'})],
+                  params: {
+                    "LAYERS": "result_soil",
+                    "TILED": "true",
+                    "VERSION": "1.3.0"},
+                })),
+                title: "Soil",
+                opacity: 1.000000,
+                
+                
+              });
+  wms_layers.push([lyrArea_result_2, 0]);              
+
 /*
 var lyrSumArea_result_2 = new ol.layer.Tile({
                 source: new ol.source.TileWMS(({
@@ -136,6 +152,7 @@ attributions: [new ol.Attribution({html: '<a href=""></a>'})],
   });
 */
 
-lyrSites.setVisible(true),lyrSoilKenya.setVisible(false);lyrProtectedAreas.setVisible(false);lyrArea_result_1.setVisible(true);//lyrSumArea_result_2.setVisible(false);lyrBuffer_result_3.setVisible(true);//vector.setVisible(true);
+lyrSites.setVisible(true);lyrSoilKenya.setVisible(false);lyrProtectedAreas.setVisible(false);lyrArea_result_1.setVisible(true);lyrArea_result_2.setVisible(true);
+//lyrSumArea_result_2.setVisible(false);lyrBuffer_result_3.setVisible(true);vector.setVisible(true);
 
-
+var layersList = [baseLayer,lyrSoilKenya,lyrProtectedAreas,lyrArea_result_1,lyrArea_result_2,lyrSites,];
