@@ -32,8 +32,25 @@ map.addControl(layerSwitcher);
 layerSwitcher.hidePanel = function() {};
 layerSwitcher.showPanel();
 
+map.on("singleclick", (e) => {
+    console.log("clicked");
+    var xy = ol.proj.transform(e.coordinate, "EPSG:3857", "EPSG:4326");
+    var radius = parseFloat($("#radius").val());
+    console.log(xy[0], xy[1]);
+    console.log(radius);
+    $.getJSON({
+        url: `/save/${xy[0]}/${xy[1]}/${radius}`,
+        success: data => {
+            console.log(data);
+            location.reload();
+        }
+    }).error(function(jqXHR, textStatus, errorThrown) {
+        console.log("error " + textStatus);
+        console.log("incoming Text " + jqXHR.responseText);
+    });
+});
 
-map.getView().fit([3000000, -1000000, 4400000, 500000], map.getSize());
 
+map.getView().fit([2200000, 200000, 6200000, 800000], map.getSize());
 var NO_POPUP = 0
 var ALL_FIELDS = 1
