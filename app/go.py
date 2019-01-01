@@ -16,7 +16,7 @@ def submit():
 
 @app.route("/save/<lat>/<lng>/<radius>")
 def savePoint(lat, lng, radius):
-    sub = insert_into_db("landbook.insert_data", (lat,lng,radius))
+    poi = insert_into_db("landbook.insert_data", (lat,lng,radius))
     return jsonify("data submitted!")
 
 #@app.route("/reset/")
