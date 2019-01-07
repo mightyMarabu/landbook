@@ -14,9 +14,9 @@ def submit():
     sub = insert_into_db()
     return Response(json.dumps(sub), mimetype = "application/json")
 
-@app.route("/save/<lat>/<lng>/<radius>")
-def savePoint(lat, lng, radius):
-    poi = insert_into_db("landbook.insert_data", (lat,lng,radius))
+@app.route("/save/<lat>/<lng>/<radius>/<lastname>/<more>/<use>")
+def savePoint(lat, lng, radius, lastname, more, use):
+    poi = insert_into_db("landbook.insert_data", (lat,lng,radius,lastname,more,use))
     return jsonify("data submitted!")
 
 #@app.route("/reset/")
