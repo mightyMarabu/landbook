@@ -10,13 +10,16 @@ import psycopg2
 lat = 50
 lng = 1
 radius = 0.5
+lastname = 'Doe'
+more = 'Info'
+use = 'Farmland'
 
 #conn_str = psycopg2.connect(dbname='postgres', user='postgres', host='192.168.70.134', port='54322', password='postgres')"
 
 def insert_into_db(function = "landbook.insert_data", params=(lat, lng, radius, lastname, more, use)):
     connect = psycopg2.connect(dbname='postgres', user='postgres', host='163.172.133.143', port='54329', password='postgres')
     cur = connect.cursor()
-    cur.execute("select landbook.insert_data(%s,%s,%s,%s,%s,%s,)", params)
+    cur.execute("select landbook.insert_data(%s,%s,%s,%s,%s,%s)", params)
     # db-funktion anpassen!
     connect.commit()
     connect.close()
