@@ -25,6 +25,16 @@ def insert_into_db(function = "landbook.insert_data", params=(lat, lng, radius, 
     connect.close()
     print ("processing.... refresh map.")
 
+def getDatafromDB():
+    connect = psycopg2.connect(dbname='postgres', user='postgres', host='163.172.133.143', port='54329', password='postgres')
+    cur = connect.cursor()
+    cur.execute("select id, name, info, use from landbook.rawdata")
+    data = cur.fetchall()
+    connect.commit()
+    connect.close()
+    return data
+    
+
 def resetMap(function = "landbook.reset_rawdata"):
     connect = psycopg2.connect(dbname='postgres', user='postgres', host='163.172.133.143', port='54329', password='postgres')
     cur = connect.cursor()

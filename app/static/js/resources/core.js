@@ -37,9 +37,10 @@ map.on("singleclick", (e) => {
     var xy = ol.proj.transform(e.coordinate, "EPSG:3857", "EPSG:4326");
     var radius = parseFloat($("#radius").val());
     console.log(xy[0], xy[1]);
-    console.log(radius);
+//    console.log(radius);
     $.getJSON({
-        url: `/save/${xy[0]}/${xy[1]}/${radius}`,
+//        url: `/save/${xy[0]}/${xy[1]}/${radius}`,
+        url: `/save/${xy[0]}/${xy[1]}/${radius}/${$("#lastname").val()}/${$("#more").val()}/${$("#use").val()}`,
         success: data => {
             console.log(data);
             location.reload();

@@ -40,7 +40,7 @@
         <style>
         #map {
             width: 100%; 
-            height: 16cm;
+            height: 30%;
         }
         </style>
         <title>Landbook</title>
@@ -50,9 +50,41 @@
         <h2>Landbook</h2>
     </div>
     <div class ="leftcolumn">
-        
-        <p>check protected areas and soil-type within range</p>
-        
+        <table class="display" id="table" style="width:100%">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>additional Info</th>
+                    <th>Landuse</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <script>
+            "use strict"
+            var data = () => {
+                $.getJSON("/getData/")
+                .done(user_data => {
+                    console.log(user_data);
+                    fillTable(user_data)
+                })
+                .fail("Kacke...");
+            }
+
+            var fillTable = (user_data) => {
+                $('#table').DataTable({
+                    data: user_data,
+                    columns:[
+                        {data: 'id'},
+                        {data: 'name'},
+                        {data: 'info'},
+                        {data: 'use'}
+                    ]
+                })
+            }
+        </script>
        
     <!--WFS-Tool-----------------------------------------------------------------------------------------    
         <DIV id="customControl" onload="initWFSTransactions()">
