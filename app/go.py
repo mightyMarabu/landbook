@@ -9,8 +9,8 @@ def index():
 
 @app.route("/save/")
 def submit():
-    sub = {"id":"2"}
-    sub = ["What am", "I doing?"]
+#    sub = {"id":"2"}
+#    sub = ["What am", "I doing?"]
     sub = insert_into_db()
     return Response(json.dumps(sub), mimetype = "application/json")
 
@@ -22,7 +22,8 @@ def savePoint(lat, lng, radius, lastname, more, use):
 @app.route("/getData/")
 def getTableData():
     dat = getDatafromDB()
-    return Response(json.dumps(dat), mimetype = "application/json")   
+    return Response(json.dumps(dat), mimetype = "application/json")
+    print("dat")
 
 @app.route("/reset/")
 def reset():
